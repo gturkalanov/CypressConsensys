@@ -23,3 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('makeInfuraCall', (method,params) => {
+   return cy.request({
+        method: 'POST',
+        url: Cypress.env('infuraGoerliUrl') + Cypress.env('infuraProjectId'),
+        body: {
+          jsonrpc: '2.0',
+          id: 1,
+          method: method,
+          params: params,
+        }
+    }).then((response)=>{
+        return response
+    })
+})
