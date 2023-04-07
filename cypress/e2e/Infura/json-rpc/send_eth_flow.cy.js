@@ -21,7 +21,7 @@ describe('Ethereum JSON-RPC End-to-End Scenario', () => {
                     // Replace with your test account private key (remove the '0x' prefix)
                     const privateKey = Buffer.from('8dda3eb44da345ee69fb9f0974fb0e44319015a7bcc8a3e4ec91cf03269ad142', 'hex');
 
-                    const transactionValue =  web3.utils.toHex(web3.utils.toWei('0.001', 'ether'))
+                    const transactionValue =  web3.utils.toHex(web3.utils.toWei('0.0001', 'ether'))
                     // Set the transaction details
                     const rawTx = {
                         nonce: web3.utils.toHex(nonce),
@@ -46,7 +46,7 @@ describe('Ethereum JSON-RPC End-to-End Scenario', () => {
                         cy.makeInfuraCall('eth_getTransactionByHash', [transactionHash]).then((response)=>{
                             expect(response.status).to.equal(200);
                             expect(response.body.result.value).to.equal(transactionValue)
-                            expect(response.body.result.to).to.equal(Cypress.env('toAccount'))
+                            expect(response.body.result.to).to.equal(Cypress.env('toAccount').toLowerCase())
                         })
                     })
 

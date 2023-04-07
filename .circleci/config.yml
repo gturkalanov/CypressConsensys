@@ -8,5 +8,4 @@ workflows:
           # split specs across machines 
           # record results with Cypress Cloud
           cypress-command: 'npm run cy:run --parallel --record'
-          start-command: 'npm run start'
           parallelism: 2
