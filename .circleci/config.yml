@@ -7,5 +7,5 @@ workflows:
       - cypress/run:
           # split specs across machines 
           # record results with Cypress Cloud
-          cypress-command: 'npm run cy:run --parallel --record'
+          cypress-command: 'npm run cy:run --parallel --record --key 385e055d-c789-4495-a960-316505f30ee1'
           parallelism: 2
