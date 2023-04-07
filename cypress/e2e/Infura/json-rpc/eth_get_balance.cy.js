@@ -11,7 +11,7 @@ describe('Infura API', () => {
     },
   };
 
-  it('eth_getBalance', () => {
+  it('eth_getBalance', () => { 
     cy.makeInfuraCall("eth_getBalance",[Cypress.env('testWallet'), 'latest']).then((response)=>{
       expect(response.status).to.equal(200);
       expect(response.body).to.be.jsonSchema(eth_getBalanceSchema);
