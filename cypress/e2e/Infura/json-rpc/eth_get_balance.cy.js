@@ -1,6 +1,6 @@
 describe('Infura API', () => {
 
-  const eth_getBalanceSchema = {
+  const eth_getBalanceSchema = { 
     title: 'eth_getBalance response schema',
     type: 'object',
     required: ['jsonrpc', 'id', 'result'],
